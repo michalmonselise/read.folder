@@ -1,0 +1,8 @@
+Package: read.folder
+Title: Easily read whole folders using the read function of your choice.
+Version: 0.0.1
+Authors@R: person("Michal", "Monselise", email = "michal.monselise@gmail.com", role = c("aut", "cre"))
+Description: This package enables you to read an entire folder of files at once using the read function of your choice.
+Depends: R (>= 3.1.2)
+License: MIT
+LazyData: true
