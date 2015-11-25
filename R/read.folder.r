@@ -10,7 +10,9 @@
 #' read.folder("./path/to/folder/", exclude="./path/to/folder/README.txt", recursive=TRUE, header=FALSE)
 read.folder <- function(folder.path, read.function=read.csv, recursive=FALSE, exclude = NULL, ...) {
     file.list <- get.files(folder.path, recursive)
-    file.list <- file.list[!grepl(exclude, file.list)]
+    if (exclude) {
+        file.list <- file.list[!grepl(exclude, file.list)]
+    }
     read.files(file.list, read.function, ...)
    
    }
