@@ -8,11 +8,9 @@
 #' @examples
 #' read.folder("./path/to/folder/", read.function=fread)
 #' read.folder("./path/to/folder/", exclude="./path/to/folder/README.txt", recursive=TRUE, header=FALSE)
-read.folder <- function(folder.path, read.function=read.csv, recursive=FALSE, exclude = NULL, ...) {
+read.folder <- function(folder.path, read.function=read.csv, recursive=FALSE, exclude = FALSE, ...) {
     file.list <- get.files(folder.path, recursive)
-    if (!is.null(exclude)) {
         file.list <- file.list[!grepl(exclude, file.list)]
-    }
     read.files(file.list, read.function, ...)
    
    }
