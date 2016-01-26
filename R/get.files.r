@@ -17,5 +17,6 @@ get.files <- function(folder.path, recursive=FALSE) {
             all.files <- c(all.files, fls)
             }
         }
+    all.files <- all.files[file.info(all.files)$size > 0]
     return(all.files)
 }    
