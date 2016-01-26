@@ -9,13 +9,13 @@ get.files <- function(folder.path, recursive=FALSE) {
     all.files <- paste(folder.path, list.files(folder.path), sep='/')
     folders <- list.dirs(folder.path)
     folders <- setdiff(folders, folder.path)
+    all.files <- NULL
         if (recursive & length(folders) > 0) {
         for (folder in folders) {
             fls <- paste(folder, list.files(folder), sep='/')
-            all.files <- fls[file.info(fls)$size > 0]
+            fls <- fls[file.info(fls)$size > 0]
             all.files <- c(all.files, fls)
             }
         }
-    files <- all.files[file.info(all.files)$size > 0]
-    return(files)
+    return(all.files)
 }    
